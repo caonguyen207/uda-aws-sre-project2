@@ -5,12 +5,12 @@ resource "aws_lb_target_group" "udacity" {
   vpc_id   = var.vpc_id
 }
 
-resource "aws_lb_target_group_attachment" "udacity" {
-  count            = 2
-  target_group_arn = aws_lb_target_group.udacity.arn
-  target_id        = var.ec2.*.id[count.index]
-  port             = 80
-}
+ resource "aws_lb_target_group_attachment" "udacity" {
+   count            = 2
+   target_group_arn = aws_lb_target_group.udacity.arn
+   target_id        = var.ec2.*.id[count.index]
+   port             = 80
+ }
 
 resource "aws_lb" "udacity" {
   name               = "udacity-lb-tf"
