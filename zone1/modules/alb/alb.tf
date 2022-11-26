@@ -1,19 +1,19 @@
 resource "aws_lb_target_group" "udacity" {
-  name     = "udacity-lb-tg"
+  name     = "udacity-lb-east-tg"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
 }
 
 resource "aws_lb_target_group_attachment" "udacity" {
-  count            = 2
-  target_group_arn = aws_lb_target_group.udacity.arn
-  target_id        = var.ec2.*.id[count.index]
-  port             = 80
-}
+   count            = 2
+   target_group_arn = aws_lb_target_group.udacity.arn
+   target_id        = var.ec2.*.id[count.index]
+   port             = 80
+ }
 
 resource "aws_lb" "udacity" {
-  name               = "udacity-lb-tf"
+  name               = "udacity-lb-east-tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.ec2_sg]
