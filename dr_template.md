@@ -28,6 +28,7 @@ More detailed descriptions of each asset identified above.
 - VPC: Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined.
 - EKS: Kubernetes service based on AWS cloud, allow run the workload with scalable. One EKS will have one or multiple node groups, each node group can contains one or more EC2 instances as node count.
 - ALB: Elastic Load Balancing - automatically distributes your incoming traffic across multiple targets: EC2, EKS...
+- RDS: Relational Datadase Server - store all the bussiness information.
 
 ## DR Plan
 ### Pre-Steps:
